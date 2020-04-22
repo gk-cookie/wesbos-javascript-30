@@ -7,9 +7,9 @@
   <body>
     <div class="clock">
       <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
+        <div class="hourhand hour-hand"></div>
+        <div class="minhand min-hand"></div>
+        <div class="sechand second-hand"></div>
       </div>
     </div>
 
@@ -52,10 +52,34 @@
         ); /* account for the height of the clock hands */
       }
 
-      .hand {
+      .hourhand {
         width: 50%;
         height: 6px;
-        background: black;
+        background: pink;
+        position: absolute;
+        top: 50%;
+        transform-origin: 100%;
+        transform: rotate(90deg);
+        transition: all 0.05s;
+        transition-timing-function: cubic-bezier(.1, 2.7, 0.58, 1) ;
+      }
+
+      .sechand {
+        width: 50%;
+        height: 6px;
+        background:yellow;
+        position: absolute;
+        top: 50%;
+        transform-origin: 100%;
+        transform: rotate(90deg);
+        transition: all 0.05s;
+        transition-timing-function: cubic-bezier(.1, 2.7, 0.58, 1) ;
+      }
+
+      .minhand {
+        width: 50%;
+        height: 6px;
+        background: purple;
         position: absolute;
         top: 50%;
         transform-origin: 100%;
