@@ -37,24 +37,25 @@
     <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
 
     <style>
-      /*
-            misc styles, nothing to do with CSS variables
-          */
       :root {
-        --base: yellow;
+        --base: #ffc600;
         --spacing: 10px;
-        --blue: 10px;
+        --blur: 10px;
       }
 
       img {
         padding: var(--spacing);
         background: var(--base);
-        filter: var(--blur);
+        filter: blur(var(--blur));
       }
 
       .hl {
         color: var(--base);
       }
+
+      /*
+      misc styles, nothing to do with CSS variables
+    */
 
       body {
         text-align: center;
@@ -73,7 +74,6 @@
         width: 100px;
       }
     </style>
-
     <script src="css.variable-js.js"></script>
   </body>
 </html>
