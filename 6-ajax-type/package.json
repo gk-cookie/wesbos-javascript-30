@@ -1,0 +1,11 @@
+{
+  "name": "6-ajax-type",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ajax-type.js",
+  "scripts": {
+    "start": "parcel index.html"
+  },
+  "author": "",
+  "license": "ISC"
+}
