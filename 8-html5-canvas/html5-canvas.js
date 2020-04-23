@@ -10,10 +10,13 @@ ctx.lineWidth = "10";
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
+let hue = 0;
+let direction = true;
 
 function draw(e) {
   if (!isDrawing) return; // stops the fn from running when mouse not clicked
   console.log(e);
+  ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
   ctx.lineTo(e.offsetX, e.offsetY);
@@ -22,6 +25,15 @@ function draw(e) {
   //   lastY = e.offsetY;
   // can destructure like these 2 to below
   [lastX, lastY] = [e.offsetX, e.offsetY];
+  hue++;
+  if (ctx.lineWidth >= 75 || ctx.lineWidth <= 1) {
+    direction = !direction;
+  }
+  if (direction) {
+    ctx.lineWidth++;
+  } else {
+      ctx.lineWidth--;
+  }
 }
 
 canvas.addEventListener("mousemove", draw);
