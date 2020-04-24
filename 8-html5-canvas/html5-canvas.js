@@ -17,6 +17,7 @@ function draw(e) {
   if (!isDrawing) return; // stops the fn from running when mouse not clicked
   console.log(e);
   ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
+
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
   ctx.lineTo(e.offsetX, e.offsetY);
