@@ -4,7 +4,7 @@ const progress = player.querySelector(".progress");
 const progBar = player.querySelector(".progress__filled");
 const ranges = player.querySelector(".player__slider");
 const toggle = player.querySelector(".toggle");
-const skipButt = player.querySelector("[data-skip]");
+const skipButtons = player.querySelectorAll("[data-skip]");
 
 function togglePlay() {
   if (video.paused) {
@@ -19,7 +19,13 @@ function updateButton() {
   console.log("Update the button");
 }
 
+function skip() {
+  console.log(this.dataset.skip);
+  video.currentTime += parseFloat(this.dataset.skip);
+}
+
 video.addEventListener("click", togglePlay);
 video.addEventListener("play", updateButton);
 video.addEventListener("pause", updateButton);
 toggle.addEventListener("click", togglePlay);
+skipButtons.forEach((button) => button.addEventListener("click", skip));
