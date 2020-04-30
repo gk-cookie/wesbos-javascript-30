@@ -44,5 +44,11 @@
     <ul id="bands"></ul>
 
     <script src="sort-wo-articles.js"></script>
+<script>
+  document.querySelector('#bands').innerHTML =
+  sortBands
+    .map(band => `<li>${band}</li>`)
+    .join('');
+</script>
   </body>
 </html>
